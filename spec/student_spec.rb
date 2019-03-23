@@ -101,6 +101,12 @@ describe Student do
         expect(new_student.id).to eq(1)
       end
     end
+
+      it 'sets the student\'s id' do
+        new_student.save
+        expect(new_student.id).to eq(1)
+      end
+    end
   end
 
   describe '.find_by_name' do
