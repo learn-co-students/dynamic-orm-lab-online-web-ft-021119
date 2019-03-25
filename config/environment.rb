@@ -1,4 +1,4 @@
-require 'sqlite3''~>1.3.6'
+require 'sqlite3'
 require 'pry'
 # A sample Gemfile
 # source "https://rubygems.org"

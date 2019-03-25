@@ -17,14 +17,17 @@ class InteractiveRecord
     column_names.compact
   end
 
-  self.column_names.each do |col_name|
-    attr_accessor col_name.to_sym
-  end
 
-  def initialize(options = {})
+
+  def initialize(options={})
     options.each do |property, value|
+      # binding.pry
       self.send("#{property}=", value)
     end
+  end
+
+  self.column_names.each do |col_name|
+    attr_accessor col_name.to_sym
   end
 
   def table_name_for_insert
@@ -53,4 +56,8 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
   end
+
+  # def self.find_by
+  #
+  # end
 end
