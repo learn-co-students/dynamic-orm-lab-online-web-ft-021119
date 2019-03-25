@@ -80,9 +80,9 @@ class InteractiveRecord
     column = attribute.keys
     data = nil
     if attribute.values == Integer
-      data = attribute.values
+      data = attribute.values[0]
     else
-      data = "'#{attribute.values}'"
+      data = "'#{attribute.values[0]}'"
     end
     sql = <<-SQL
     SELECT * FROM #{self.table_name} WHERE #{column[0]} = #{data}
