@@ -76,6 +76,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
+    binding.pry
     column = attribute.keys
     data = nil
     if attribute.values == Integer
