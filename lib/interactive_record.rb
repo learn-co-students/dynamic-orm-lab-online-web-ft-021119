@@ -46,6 +46,5 @@ class InteractiveRecord
     key, value = hash.first
     sql = "SELECT * FROM #{self.table_name} WHERE #{key.to_s} = ?"
     DB[:conn].execute(sql, value)
-    binding.pry
   end
 end
